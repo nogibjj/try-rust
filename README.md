@@ -1,6 +1,8 @@
-# rust-new-project-template
-A good starting point for a new Rust project
+learn rust from noahgift/rust-docker-cli
 
-## References
+This is a rust command-line tool in Docker container
 
-* [rust-cli-template](https://github.com/kbknapp/rust-cli-template)
+```bash
+docker build -t marco-polo .
+docker run --rm -it marco-polo --help 
+```
