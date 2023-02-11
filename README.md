@@ -1,6 +1,7 @@
-# rust-new-project-template
-A good starting point for a new Rust project
+# Here is my try-out of ONNX, inspired by Professor Gift
 
-## References
-
-* [rust-cli-template](https://github.com/kbknapp/rust-cli-template)
+* Refer to guide here:  https://crates.io/crates/onnxruntime
+* See models here:  https://github.com/onnx/models/tree/main/vision/classification/squeezenet
+* Get runtime: `make install` will download onnx model
+* Run help `cargo run -- --help`
+* Invoke:  `cargo run -- infer`
