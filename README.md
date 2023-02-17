@@ -1,6 +1,12 @@
-# rust-new-project-template
-A good starting point for a new Rust project
+### Working PyTorch Actix
 
-## References
+This runs PyTorch + Actix
 
-* [rust-cli-template](https://github.com/kbknapp/rust-cli-template)
+* To DO:  figure the final containerized steps:
+currently missing `libtorch_cpu.so:`
+
+```bash
+docker run -it --rm -p 8080:8080 torch
+actixtorch: error while loading shared libraries: libtorch_cpu.so: cannot open shared object file: No such file or directory
+make: *** [Makefile:14: rundocker] Error 127
+```
