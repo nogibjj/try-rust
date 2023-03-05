@@ -1,24 +1,17 @@
-rust-version:
-	@echo "Rust command-line utility versions:"
-	rustc --version 			#rust compiler
-	cargo --version 			#rust package manager
-	rustfmt --version			#rust code formatter
-	rustup --version			#rust toolchain manager
-	clippy-driver --version		#rust linter
-
 format:
 	cargo fmt --quiet
 
 lint:
+	@rustup component add clippy 2> /dev/null
 	cargo clippy --quiet
 
 test:
 	cargo test --quiet
 
-run:
-	cargo run
+build-docker:
+	docker build -t distroless-cli .
 
-release:
-	cargo build --release
+run:
+	cargo run -- greet --name bob
 
 all: format lint test run

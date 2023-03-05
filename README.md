@@ -1,6 +1,5 @@
-# rust-new-project-template
-A good starting point for a new Rust project
+# here is my try out of distroless-cli
 
-## References
+Run the 27mb binary do this:
 
-* [rust-cli-template](https://github.com/kbknapp/rust-cli-template)
+`docker run -it --rm 61503cf1e0b3 ./distcli greet --name bob`
