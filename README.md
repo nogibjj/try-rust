@@ -1,6 +1,12 @@
-# rust-new-project-template
-A good starting point for a new Rust project
+# here is my try out of EFS in rust
+## work with EFS
 
-## References
-
-* [rust-cli-template](https://github.com/kbknapp/rust-cli-template)
+cargo lambda invoke --remote \
+                --data-ascii '{"name": "Marco"}' \
+                --output-format json \
+                efs-lister
+{
+  "files": "\n\n/mnt/efs/foo.txt",
+  "msg": "Hello, Marco!",
+  "req_id": "4c1e79df-a304-4f97-85b3-ba39e00e04a5"
+}
