@@ -1,6 +1,3 @@
-# rust-new-project-template
-A good starting point for a new Rust project
+### Notes
 
-## References
-
-* [rust-cli-template](https://github.com/kbknapp/rust-cli-template)
+Inspired by example from O'Reilly book WebAssembly The Definitive Guide.

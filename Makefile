@@ -1,10 +1,15 @@
-rust-version:
-	@echo "Rust command-line utility versions:"
-	rustc --version 			#rust compiler
-	cargo --version 			#rust package manager
-	rustfmt --version			#rust code formatter
-	rustup --version			#rust toolchain manager
-	clippy-driver --version		#rust linter
+install:
+	echo "Installing rustwasm and wasm3"
+	curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+	## Install wasm3 if you want
+	#brew install wasm3
+	#arch -arm64 brew install wasm3 #if you are on M1
+
+build-wasm:
+	wasm-pack build --target web
+
+serve:
+	python3 -m http.server
 
 format:
 	cargo fmt --quiet
@@ -16,9 +21,6 @@ test:
 	cargo test --quiet
 
 run:
-	cargo run
-
-release:
-	cargo build --release
+	cargo run 
 
 all: format lint test run
