@@ -1,6 +1,18 @@
-# rust-new-project-template
-A good starting point for a new Rust project
+```bash
+cargo lambda invoke --remote \
+  --data-ascii '{"command": "hi"}' \
+  --output-format json \
+  rust-aws-lambda
+```
 
-## References
-
-* [rust-cli-template](https://github.com/kbknapp/rust-cli-template)
+Result:
+```bash
+cargo lambda invoke --remote \
+                --data-ascii '{"command": "hi"}' \
+                --output-format json \
+                rust-aws-lambda
+{
+  "msg": "Command hi executed.",
+  "req_id": "1f70aff9-dc65-47be-977b-4b81bf83e7a7"
+}
+```

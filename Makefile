@@ -1,11 +1,6 @@
-rust-version:
-	@echo "Rust command-line utility versions:"
-	rustc --version 			#rust compiler
-	cargo --version 			#rust package manager
-	rustfmt --version			#rust code formatter
-	rustup --version			#rust toolchain manager
-	clippy-driver --version		#rust linter
-
+install:
+	#unfortunately python dependencies needed
+	pip3 install cargo-lambda
 format:
 	cargo fmt --quiet
 
@@ -16,9 +11,22 @@ test:
 	cargo test --quiet
 
 run:
-	cargo run
+	cargo run 
 
 release:
-	cargo build --release
+	#cargo build --release --target x86_64-unknown-linux-musl
+	cargo lambda build --release
+
+release-arm:
+	cargo lambda build --release --arm64
+
+deploy:
+	cargo lambda deploy
+
+invoke:
+	cargo lambda invoke --remote \
+  		--data-ascii '{"command": "hi"}' \
+  		--output-format json \
+  		rust-aws-lambda
 
 all: format lint test run
